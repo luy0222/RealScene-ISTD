@@ -23,12 +23,12 @@
 
 ## Introduction
 ### Overview
-<img src="./datas/framework.pdf" width=100%>
+<img src="./datas/framework.jpg" width=100%>
 
 
 
 ### Visual
-<img src="./datas/Quantitative-result。pdf" width=100%>
+<img src="./datas/Quantitative-result.jpg" width=100%>
 
 
 ## Dependencies and Installation
