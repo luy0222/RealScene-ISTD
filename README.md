@@ -38,7 +38,22 @@
 ## Dataset 
 
 Download the dataset RealScene-ISTD：Download dir[[Baidu Drive]()][[Google Drive]()]. 
-
+* **The following structure:**
+ ```
+  ├──./datasets/
+  │    ├── RealScene-ISTD
+  │    │    ├── images
+  │    │    │    ├── 000001.png
+  │    │    │    ├── 000002.png
+  │    │    │    ├── ...
+  │    │    ├── masks
+  │    │    │    ├── 000001.png
+  │    │    │    ├── 000002.png
+  │    │    │    ├── ...
+  │    │    ├── img_idx
+  │    │    │    ├── train_RealScene-ISTD.txt
+  │    │    │    ├── test_RealScene-ISTD.txt
+ ```
 
 ## Codes Demos
 
