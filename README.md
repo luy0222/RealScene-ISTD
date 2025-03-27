@@ -57,7 +57,7 @@ Download the dataset RealScene-ISTD：Download dir[[Baidu Drive]()][[Google Driv
 
 ## Codes Demos
 
-**gamma_correction**
+**Gamma_Correction**
 
 ```bash
 # Run gamma_correction.py directly
