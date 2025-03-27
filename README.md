@@ -117,7 +117,7 @@ python test.py
 ## Acknowledgement
 This project is build based on [SCTransNet](https://github.com/xdFai/SCTransNet). Thanks to Shuai Yuan.
 
-The comparative experiments of our method with other methods are based on [BasicIRSTD](https://github.com/XinyiYing/BasicIRSTD).
+The comparative experiments of our method with other methods are based on [BasicIRSTD](https://github.com/XinyiYing/BasicIRSTD). Thanks to Xinyi Ying.
 
 
 
