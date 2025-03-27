@@ -7,7 +7,6 @@
 
 ## Contents
 - [Introduction](#introduction)
-  - [curve](#curve)
   - [Overview](#overview)
   - [Visual](#visual)
 - [Dependencies and Installation](#dependencies-and-installation)
@@ -32,91 +31,78 @@
 
 
 ## Dependencies and Installation
-- Following [DNANet](https://github.com/YeRen123455/Infrared-Small-Target-Detection)
+- Following [SCTransNet](https://github.com/xdFai/SCTransNet)
 - Python == 3.8
 - pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-- pip install scikit-image
-- pip install tqdm
-- pip install matplotlib
-- pip install tensorboard==2.14.0
-- pip install opencv-python==4.8.0.76
-
-
 
 ## Dataset 
 
-Download the dataset download dir models[[Baidu Drive](https://pan.baidu.com/s/1EG-loK86aWJL7M6bPQjivA?pwd=1234)][[Google Drive](https://drive.google.com/file/d/13aIrY5azO4bPwSGzDCzmgpwtpmYsysaD/view?usp=sharing)]. Currently, the available dataset are:
-- `SIRST-5K`: The dataset synthesized using negatives generation strategies (Fig 2).
+Download the dataset RealScene-ISTD：Download dir[[Baidu Drive]()][[Google Drive]()]. 
 
 
 ## Codes Demos
 
-**Noise Sampling**
+**gamma_correction**
 
 ```bash
-# Run Noise_Sampling.py directly
-python codes/Noise_Sampling/Noise_Sampling.py
+# Run gamma_correction.py directly
+python Dataset_Alignment/gamma_correction.py
 ```
 
-**Noise  displacement**
+**Topk_Fusion**
 
 ```bash
-# Run add_noise.py directly
-python codes/Mix_Rot/add_noise.py
+# Run Topk_Fusion directly
+python Dataset_Alignment/Topk_Fusion.py
 ```
-
-**Negative**
-
-```bash
-# Run rot_patch.py directly
-python codes/Mix_Rot/rot_patch.py
-```
-```bash
-# Run rot_mask.py directly
-python codes/Mix_Rot/rot_mask.py
-```
-
-Our negative augmentation strategies can produce large amounts of challenging image data. You can download the [SIRST-5K](https://drive.google.com/file/d/13aIrY5azO4bPwSGzDCzmgpwtpmYsysaD/view?usp=sharing) directly for training.
+You can use our pre-prepared [small target patches](https://drive.google.com/file/d/13aIrY5azO4bPwSGzDCzmgpwtpmYsysaD/view?usp=sharing) , which come from the NUAA-SIRST, IRSTD-1K, and RealScene-ISTD datasets.
 
 ## Usage
 
 #### 1. Train.
 
 ```bash
-python train.py --base_size 256 --crop_size 256 --epochs 1500 --dataset [dataset-name] --split_method 50_50  --deep_supervision True --train_batch_size 16 --test_batch_size 16 --mode TXT
-
+python train.py
 ```
 #### 2. Test.
-
 ```bash
-python test.py --base_size 256 --crop_size 256 --st_model [trained model path] --model_dir [model_dir] --dataset [dataset-name] --split_method 50_50    --deep_supervision True --test_batch_size 1 --mode TXT 
+python test.py
 ```
 
-#### 3. Visulize your predicts.
-```bash
-python visulization.py --base_size 256 --crop_size 256 --st_model [trained model path] --model_dir [model_dir] --dataset [dataset-name] --split_method 50_50    --deep_supervision True --test_batch_size 1 --mode TXT 
-```
 
-## Quantative Results 
 
-| Model    | mIoU (x10(2)) | Pd (x10(2))|  Fa (x10(6)) ||
+## Quantitative Results
+### Test on RealScene-ISTD
+| Method    | mIoU (x10(-2)) | Pd (x10(-2))|  Fa (x10(-6)) ||
 | ------------- |:-------------:|:-----:|:-----:|:-----:| 
-|  Ours | 92.78|98.84  |2.735 |[[Weights]](https://drive.google.com/file/d/1pTmKST5E662KKfAlCUolheTLjN-PKWm1/view?usp=drive_link)|
+|ACM-Net |64.25|91.97|250.79||        
+|ALC-Net |68.88 |90.91 |146.85  ||                       
+| DNA-Net|73.79 | 91.33| 60.06  || 
+|RDIAN |59.46 |90.70   |357.92 ||          
+|ISTDU-Net |74.40 |93.87  | 75.35  ||           
+| UIU-Net| 31.75|89.43|2928.64  ||              
+| SCTransNet|75.01|94.29|53.59|| 
+|  Ours | 79.32| 96.83 |5.40 |[[Weights]]()|
 
-<img src="./datas/Quantative-results.jpg" width=100%>
+### Test on IRSTD-1K
+| Method    | mIoU (x10(-2)) | Pd (x10(-2))|  Fa (x10(-6)) ||
+| ------------- |:-------------:|:-----:|:-----:|:-----:| 
+|ACM-Net |57.68|92.23 |115.28 ||                    
+|ALC-Net |62.69    |92.28 |58.99   ||                        
+|DNA-Net|64.14  | 95.64| 40.90    || 
+|RDIAN |60.12 |93.96     |98.88 ||          
+|ISTDU-Net |63.20 |96.98 | 14.36  ||           
+| UIU-Net| 39.10  |92.62|7008.86  ||              
+| SCTransNet|66.93|93.96|15.45|| 
+|  Ours | 72.44| 95.30   |14.08 |[[Weights]]()|
 
-## Citation
-If you find this project useful for your research, please consider citing our paper. :smiley:
-```bibtex
-@ARTICLE{10496142,
-  author={Lu, Yahao and Lin, Yupei and Wu, Han and Xian, Xiaoyu and Shi, Yukai and Lin, Liang},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={SIRST-5K: Exploring Massive Negatives Synthesis with Self-supervised Learning for Robust Infrared Small Target Detection}, 
-  year={2024},
-  publisher={IEEE}
-  doi={10.1109/TGRS.2024.3387125}
-}
-```
+
+
+
 ## Acknowledgement
-This project is build based on [DNANet](https://github.com/YeRen123455/Infrared-Small-Target-Detection). We thank the authors for sharing their code.
+This project is build based on [SCTransNet](https://github.com/xdFai/SCTransNet). Thanks to Shuai Yuan.
+
+The comparative experiments of our method with other methods are based on [BasicIRSTD](https://github.com/XinyiYing/BasicIRSTD).
+
+
 
