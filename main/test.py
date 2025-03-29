@@ -386,13 +386,13 @@ parser.add_argument("--model_names", default=['Net'], type=list,
 parser.add_argument("--pth_dirs", default=['SIRST3/Net_NUAA_RealScene-ISTD_IRSTD1K.pth.tar'], type=list)
 parser.add_argument("--dataset_dir", default=r'D:\05TGARS\Upload\datasets', type=str, help="train_dataset_dir")
 parser.add_argument("--dataset_names", default=['NUAA-SIRST', 'RealScene-ISTD-SIRST', 'IRSTD-1K'], type=list,
-                    help="dataset_name: 'NUAA-SIRST', 'RealScene-ISTD-SIRST', 'IRSTD-1K', 'SIRST3', 'RealScene-ISTD-SIRST-Sea'")
+                    help="dataset_name: 'NUAA-SIRST', 'RealScene-ISTD', 'IRSTD-1K'")
 parser.add_argument("--img_norm_cfg", default=None, type=dict,
                     help="specific a img_norm_cfg, default=None (using img_norm_cfg values of each dataset)")
 parser.add_argument("--save_img", default=False, type=bool, help="save image of or not")
-parser.add_argument("--save_img_dir", type=str, default=r'D:\SCI\01_02_SCI\Result/',
+parser.add_argument("--save_img_dir", type=str, default=r'.\Result/',
                     help="path of saved image")
-parser.add_argument("--save_log", type=str, default=r'D:\05TGARS\upload\log/', help="path of saved .pth")
+parser.add_argument("--save_log", type=str, default=r'.\log/', help="path of saved .pth")
 parser.add_argument("--threshold", type=float, default=0.5)
 
 global opt

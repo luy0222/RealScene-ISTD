@@ -79,19 +79,16 @@ def train():
         # for i in range(len(opt.scheduler_settings['step'])):
         #     opt.scheduler_settings['step'][i] = opt.scheduler_settings['step'][i] - ckpt['epoch']
 
-    ### Default settings of Net
     if opt.optimizer_name == 'Adam':
         opt.optimizer_settings = {'lr': 0.001}
         opt.scheduler_name = 'CosineAnnealingLR'
         opt.scheduler_settings = {'epochs': opt.epochs, 'eta_min': 1e-5, 'last_epoch': -1}
 
-    ### Default settings of DNANet
     if opt.optimizer_name == 'Adagrad':
         opt.optimizer_settings = {'lr': 0.05}
         opt.scheduler_name = 'CosineAnnealingLR'
         opt.scheduler_settings = {'epochs': opt.epochs, 'min_lr': 1e-5}
 
-    ### Default settings of EGEUNet
     if opt.optimizer_name == 'AdamW':
         opt.optimizer_settings = {'lr': 0.001, 'betas': (0.9, 0.999), "eps": 1e-8, "weight_decay": 1e-2,
                                   "amsgrad": False}
@@ -163,8 +160,6 @@ def train():
                         pred = pred
                     pred = pred[:, :, :size[0], :size[1]]
                     gt_mask = gt_mask[:, :, :size[0], :size[1]]
-                    # if pred.size() != gt_mask.size():
-                    #     print('1111')
                     loss = net.loss(pred, gt_mask.cuda())
                     test_loss.append(loss.detach().cpu())
                     eval_mIoU.update((pred > opt.threshold).cpu(), gt_mask.cpu())

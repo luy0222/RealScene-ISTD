@@ -113,26 +113,10 @@ def Denormalization(img, img_norm_cfg):
 def get_img_norm_cfg(dataset_name, dataset_dir):
     if dataset_name == 'NUAA-SIRST':
         img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'RealScene-ISTD-SIRST':
+    elif dataset_name == 'NUDT-SIRST':
         img_norm_cfg = dict(mean=107.80905151367188, std=33.02274703979492)
     elif dataset_name == 'IRSTD-1K':
         img_norm_cfg = dict(mean=87.4661865234375, std=39.71953201293945)
-    elif dataset_name == 'SIRST2':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'SIRST3':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'RealScene-ISTD-SIRST-Sea':
-        img_norm_cfg = dict(mean=43.62403869628906, std=18.91838264465332)
-    elif dataset_name == 'SIRST4':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'SIRST5':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'SIRST6':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'SIRST7':
-        img_norm_cfg = dict(mean=101.06385040283203, std=34.619606018066406)
-    elif dataset_name == 'IRDST-real':
-        img_norm_cfg = {'mean': 101.54053497314453, 'std': 56.49856185913086}
     else:
         with open(dataset_dir + '/' + dataset_name + '/img_idx/train_' + dataset_name + '.txt', 'r') as f:
             train_list = f.read().splitlines()
