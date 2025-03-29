@@ -37,7 +37,7 @@
 
 ## Dataset 
 
-Download the dataset RealScene-ISTD：Download dir[[Baidu Drive](https://pan.baidu.com/s/1BAY9N4xEtw57_v3TjHrSpg?pwd=trnh]. 
+Download the dataset RealScene-ISTD：Download dir[[Baidu Drive](https://pan.baidu.com/s/1BAY9N4xEtw57_v3TjHrSpg?pwd=trnh)]. 
 * **The following structure:**
  ```
   ├──./datasets/
@@ -70,7 +70,7 @@ python Dataset_Alignment/gamma_correction.py
 # Run Topk_Fusion directly
 python Dataset_Alignment/Topk_Fusion.py
 ```
-You can use our pre-prepared [small target patches](https://pan.baidu.com/s/1zSDV6cw2xcciaKpxpurXdQ?pwd=vjkb).
+You can use our pre-prepared small target patches [[Baidu Drive](https://pan.baidu.com/s/1zSDV6cw2xcciaKpxpurXdQ?pwd=vjkb)].
 
 ## Usage
 
@@ -109,7 +109,7 @@ python test.py
 |ISTDU-Net|63.20 |96.98 | 14.36  ||           
 |UIU-Net| 39.10  |92.62|7008.86  ||              
 |SCTransNet|66.93|93.96|15.45|| 
-|Ours| 72.44| 95.30   |14.08 |[[Weights]]()|
+|Ours| 72.44| 95.30   |14.08 |[[Weights]](https://pan.baidu.com/s/1K2G0-6-x9KtIYhparjyAZg?pwd=nf9u)|
 
 
 
