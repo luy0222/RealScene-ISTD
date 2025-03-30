@@ -77,10 +77,12 @@ You can use our pre-prepared small target patches [[Baidu Drive](https://pan.bai
 #### 1. Train.
 
 ```bash
+cd main
 python train.py
 ```
 #### 2. Test.
 ```bash
+cd main
 python test.py
 ```
 
