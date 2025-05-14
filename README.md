@@ -3,6 +3,7 @@
 
 
 ***Rethinking Generalizable Infrared Small Target Detection: A Real-scene Benchmark and Cross-view Representation Learning***
+> [![arXiv](https://img.shields.io/badge/arXiv-Paper-blue.svg)](https://arxiv.org/abs/2504.16487)<br>
 
 
 ## Contents
